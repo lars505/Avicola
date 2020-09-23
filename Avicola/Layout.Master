@@ -60,7 +60,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Components:</h6> -->
             <a class="collapse-item" href="buttons.html"><i class="mr-3 fas fa-dove"></i>Aves </a>
-            <a class="collapse-item" href="cards.html"><i class=" mr-3 fas fa-dolly"></i>Proveedores </a>
+            <a class="collapse-item" href="Proveedor.aspx "><i class=" mr-3 fas fa-dolly"></i>Proveedores </a>
             <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-syringe"></i> Insumos</a>
             <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-users"></i>Categoria</a>
             <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-users"></i>Usuarios</a>
