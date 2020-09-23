@@ -31,11 +31,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.aspx">
         <div class="sidebar-brand-icon rotate-n-15">
           <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3">Avicola <sup>Lars</sup></div>
+        <div class="sidebar-brand-text mx-3">Avicola <sup>Baez</sup></div>
       </a>
 
       <!-- Divider -->
@@ -59,12 +59,12 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-            <a class="collapse-item" href="buttons.html"><i class="mr-3 fas fa-dove"></i>Aves </a>
-            <a class="collapse-item" href="cards.html"><i class=" mr-3 fas fa-dolly"></i>Proveedores </a>
-            <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-syringe"></i> Insumos</a>
-            <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-users"></i>Categoria</a>
-            <a class="collapse-item" href="cards.html"><i class="mr-3 fas fa-users"></i>Usuarios</a>
-            <a class="collapse-item" href="cards.html"><i class=" pr-2 mr-3 fas fa-user"></i>Clientes</a>
+            <a class="collapse-item" href="#"><i class="mr-3 fas fa-dove"></i>Aves </a>
+            <a class="collapse-item" href="#"><i class=" mr-3 fas fa-dolly"></i>Proveedores </a>
+            <a class="collapse-item" href="#"><i class="mr-3 fas fa-syringe"></i> Insumos</a>
+            <a class="collapse-item" href="#"><i class="mr-3 fas fa-users"></i>Categoria</a>
+            <a class="collapse-item" href="#"><i class="mr-3 fas fa-users"></i>Usuarios</a>
+            <a class="collapse-item" href="/Setup.aspx"><i class=" pr-2 mr-3 fas fa-user"></i>Clientes</a>
           </div>
         </div>
       </li>
@@ -229,6 +229,7 @@
           <form id="form1" runat="server">
             <div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
                 </asp:ContentPlaceHolder>
             </div>
            </form>
