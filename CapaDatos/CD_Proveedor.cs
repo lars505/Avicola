@@ -146,20 +146,30 @@ namespace CapaDatos
 
         public void InsertarProveedor(CE_Proveedor Proveedor)
         {
-            SqlCommand cmd = new SqlCommand("SP_INSERTARPROVEEDOR", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
+                
+                conexion.Open();
 
-            cmd.Parameters.AddWithValue("@CDEPARTAMENTO", Proveedor.CodDepartamento);
-            cmd.Parameters.AddWithValue("@CODMUNICIPIO", Proveedor.CodMunicipio);
-            cmd.Parameters.AddWithValue("@NOMBREPROVEEDOR", Proveedor.NombreProveedor);
-            cmd.Parameters.AddWithValue("@NOMBRECONTACTO", Proveedor.Nombrecontacto);
-            cmd.Parameters.AddWithValue("@DIRECCION", Proveedor.Direccion);
-            cmd.Parameters.AddWithValue("@TELEFONO", Proveedor.Telefono);
-            cmd.Parameters.AddWithValue("@EMAIL", Proveedor.Email);
+                const string sqlQuery = "INSERT INTO Proveedor(CodDepartamento, CodMunicipio, NombreProveedor, NombreContacto, Direccion, Telefono, Email) VALUES(@CDEPARTAMENTO,@CODMUNICIPIO,@NOMBREPROVEEDOR,@NOMBRECONTACTO,@DIRECCION,@TELEFONO,@EMAIL)";
+                SqlCommand cmd = new SqlCommand(sqlQuery, conexion);
+                cmd.Parameters.AddWithValue("@CDEPARTAMENTO", Proveedor.CodDepartamento);
+                cmd.Parameters.AddWithValue("@CODMUNICIPIO", Proveedor.CodMunicipio);
+                cmd.Parameters.AddWithValue("@NOMBREPROVEEDOR", Proveedor.NombreProveedor);
+                cmd.Parameters.AddWithValue("@NOMBRECONTACTO", Proveedor.Nombrecontacto);
+                cmd.Parameters.AddWithValue("@DIRECCION", Proveedor.Direccion);
+                cmd.Parameters.AddWithValue("@TELEFONO", Proveedor.Telefono);
+                cmd.Parameters.AddWithValue("@EMAIL", Proveedor.Email);
 
-            cmd.ExecuteNonQuery();
-            conexion.Close();
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("mensaje ", ex.Message);
+            }
+            
 
 
         }

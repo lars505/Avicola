@@ -14,11 +14,11 @@ namespace Avicola.view
     {
         public void CargarGrid()
         {
-            var obj = new CE_Proveedor();
-            GridView grid = new GridView();
-            grid = GridCliente;
-            GridCliente.DataSource = obj.Seleccionar();
-            GridCliente.DataBind();
+            //var obj = new CE_Proveedor();
+            //GridView grid = new GridView();
+            //grid = GridCliente;
+            //GridCliente.DataSource = obj.Seleccionar();
+            //GridCliente.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,22 +30,16 @@ namespace Avicola.view
             try
             {
                 CE_Proveedor Proveedor = new CE_Proveedor();
-                CD_Proveedor CDProveedor = new CD_Proveedor();
+                CN_Proveedor CNProveedor = new CN_Proveedor();
                 Proveedor.CodDepartamento = Convert.ToInt32(CodDep.Text);
                 Proveedor.CodMunicipio = Convert.ToInt32(CodMun.Text);
-                Proveedor.Nombre = NombreProv.Text;
+                Proveedor.NombreProveedor = NombreProv.Text;
                 Proveedor.Nombrecontacto = NombreContacto.Text;
                 Proveedor.Direccion = Direccion.Text;
                 Proveedor.Telefono = Convert.ToInt32(telefono.Text);
                 Proveedor.Email = Email.Text;
-                if (CDProveedor.Insertar(Proveedor)== true)
-                {
-                    Console.Write("Producto agregado");
-                }
-                else
-                {
-                    Console.WriteLine("Error al insertar producto");
-                }
+                CNProveedor.InsertandoProveedor(Proveedor);
+                
 
             }
             catch (Exception ex)
