@@ -1959,14 +1959,6 @@
       <Project>{ff3c6787-54b6-407c-8956-d0ffed9e52e4}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
-      <Project>{77ad7f8f-c113-496b-8ca9-7e7ce8c54f95}</Project>
-      <Name>CapaPresentacion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Conexion\Conexion.csproj">
-      <Project>{367556e5-e891-45bf-b147-c15fa81f937d}</Project>
-      <Name>Conexion</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

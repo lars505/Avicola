@@ -12,6 +12,14 @@ namespace Avicola.view
 {
     public partial class Proveedor : System.Web.UI.Page
     {
+        public void CargarGrid()
+        {
+            var obj = new CE_Proveedor();
+            GridView grid = new GridView();
+            grid = GridCliente;
+            GridCliente.DataSource = obj.Seleccionar();
+            GridCliente.DataBind();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

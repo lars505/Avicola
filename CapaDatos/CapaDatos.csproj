@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,10 +49,6 @@
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
       <Project>{1697ce21-b679-4506-90e8-75ad75c45f64}</Project>
       <Name>CapaEntidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Conexion\Conexion.csproj">
-      <Project>{367556e5-e891-45bf-b147-c15fa81f937d}</Project>
-      <Name>Conexion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

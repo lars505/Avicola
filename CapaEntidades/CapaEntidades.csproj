@@ -44,11 +44,5 @@
     <Compile Include="CE_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Conexion\Conexion.csproj">
-      <Project>{367556e5-e891-45bf-b147-c15fa81f937d}</Project>
-      <Name>Conexion</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
