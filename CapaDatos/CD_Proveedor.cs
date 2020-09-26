@@ -112,37 +112,55 @@ namespace CapaDatos
 
 
         SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Conectar"].ConnectionString);
-        public List<CE_Proveedor> ListaProveedor(string buscar)
+
+
+
+        //public List<CE_Proveedor> ListaProveedor(string buscar)
+        //{
+        //    SqlDataReader LeerFilas;
+        //    SqlCommand cmd = new SqlCommand("SP_BUSCARPROVEEDOR", conexion);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    conexion.Open();
+
+        //    cmd.Parameters.AddWithValue("@BUSCAR", buscar);
+        //    LeerFilas = cmd.ExecuteReader();
+        //    List<CE_Proveedor> Listar = new List<CE_Proveedor>();
+        //    while (LeerFilas.Read())
+        //    {
+        //        Listar.Add(new CE_Proveedor
+        //        {
+        //            IdProveedor = LeerFilas.GetInt32(0),
+        //            NombreProveedor = LeerFilas.GetString(1),
+        //            Nombrecontacto = LeerFilas.GetString(2),
+        //            Direccion = LeerFilas.GetString(3),
+        //            Telefono = LeerFilas.GetInt32(4),
+        //            Email = LeerFilas.GetString(5),
+        //            CodDepartamento = LeerFilas.GetInt32(6),
+        //            CodMunicipio = LeerFilas.GetInt32(7)
+
+
+        //        }) ;
+
+        //    }
+        //    conexion.Close();
+        //    LeerFilas.Close();
+        //    return Listar;
+        //}
+
+
+        public DataTable Tablasql()
         {
-            SqlDataReader LeerFilas;
-            SqlCommand cmd = new SqlCommand("SP_BUSCARPROVEEDOR", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
             conexion.Open();
-
-            cmd.Parameters.AddWithValue(buscar, buscar);
-            LeerFilas = cmd.ExecuteReader();
-            List<CE_Proveedor> Listar = new List<CE_Proveedor>();
-            while (LeerFilas.Read())
-            {
-                Listar.Add(new CE_Proveedor
-                {
-                    IdProveedor = LeerFilas.GetInt32(0),
-                    NombreProveedor = LeerFilas.GetString(1),
-                    Nombrecontacto = LeerFilas.GetString(2),
-                    Direccion = LeerFilas.GetString(3),
-                    Telefono = LeerFilas.GetInt32(4),
-                    Email = LeerFilas.GetString(5),
-                    CodDepartamento = LeerFilas.GetInt32(6),
-                    CodMunicipio = LeerFilas.GetInt32(7)
-
-
-                }) ;
-
-            }
+            string Query = "Select * From Proveedor";
+            var comand = new SqlCommand(Query, conexion);
+            SqlDataAdapter ds = new SqlDataAdapter(comand);
+            ds.Fill(dt);
             conexion.Close();
-            LeerFilas.Close();
-            return Listar;
+            return dt;
         }
+
+
 
         public void InsertarProveedor(CE_Proveedor Proveedor)
         {

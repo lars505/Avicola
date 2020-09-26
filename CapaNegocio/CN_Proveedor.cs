@@ -14,22 +14,18 @@ namespace CapaNegocio
 {
     public class CN_Proveedor
     {
-        //CD_Proveedor A = new CD_Proveedor();
-        //public DataTable Seleccionar()
-        //{
-        //    return A.seleccionar();
-        //}
+       
 
         CD_Proveedor ObjDato = new CD_Proveedor();
 
         //SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Conectar"].ConnectionString)
         
-         public List<CE_Proveedor>ListadoProveedor(string buscar)
+       public DataTable Grid()
         {
-            return ObjDato.ListaProveedor(buscar);
-
+            return ObjDato.Tablasql();
         }
-        
+
+
         public void InsertandoProveedor(CE_Proveedor Proveedor)
         {
             ObjDato.InsertarProveedor(Proveedor);

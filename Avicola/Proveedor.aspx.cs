@@ -14,15 +14,18 @@ namespace Avicola.view
     {
         public void CargarGrid()
         {
-            //var obj = new CE_Proveedor();
-            //GridView grid = new GridView();
-            //grid = GridCliente;
-            //GridCliente.DataSource = obj.Seleccionar();
-            //GridCliente.DataBind();
+            var obj = new CN_Proveedor();
+            GridView grid = new GridView();
+            grid = GridCliente;
+            GridCliente.DataSource = obj.Grid();
+            GridCliente.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                CargarGrid();
+            }
         }
 
         protected void Guardar_Click(object sender, EventArgs e)
